@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<!--
+Ultimo Changelog c.l :
+
+29/07/19 6to Changelog:
+Christian Kevin Argento:
+  { Se logro la creaccion definitiva de la app, quedan algunos detalles que seran correjidos en las proximas versiones.
+    - Mejora estetica de los accordions de <section> Playfields.
+    - Union de HTML's, CSS's, JS's con los cambios de ulises y mios.}
+
+-->
+
+<!--
+            MENU GUIA m.g
+  CTRL + F se abre cuadro y se busca  
+  - Changelog                 = c.l
+  - Menu Guia                 = m.g
+  - <head>                    = h.d
+  - <header>                  = h.r
+  - <section> "home/index"    = s.h 
+  - <section> "teams"         = s.t.0
+  - <section> "teams" team U1 = s.t.1
+  - <section> "teams" team U2 = s.t.2
+  - <section> "teams" team U3 = s.t.3
+  - <section> "teams" team U4 = s.t.4
+  - <section> "teams" team U5 = s.t.5
+  - <section> "teams" team U6 = s.t.6
+  - <section> "games"         = s.g
+  - <section> "playfields"    = s.p
+  - <section> "about us"      = s.a
+  - <section> "login"         = s.l
+  - <section> "sign-up"       = s.s
+	- <section> "chat"         = s.c
+  - <script>                  = s.0
+-->
+
+
+<!--
+
+29/07 linea 95 cambie el meta para que funcione bien
+quite ria-expanded de cada linea en que estaba
+agregue un div en la linea 1052 porque faltaba el cierre
+aria-labelledby lo elimine de cada div no cumplia ninguna funcion
+modifique el playfields para que se vea diferente con los mapas
+agregue metas de la documentacion
+Ver el tema de los titulos y el metautf-8
+
+12-8 cambie el div games para q se vea mejor
+-->
+
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<!--Viewport-->
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	
+	<meta name="description"
+		content="HTML meta tags are a cornerstone of coding. But which are the most essential? We give you a rundown of all the meta tags you need to know." />
+	<!--con que palabras me va a buscar el buscador-->
+	<meta name="keywords" content="keyword 1, keyword 2, keyword 3" />
+	<meta name="author" content="Author name" />
+	<!-- CODELAB: Add meta theme-color -->
+	<meta name="theme-color" content="#00aff0" />
+	<!--EXTRA-->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<link rel="apple-touch-icon" sizes="180×180" href="img/shortcut-ios-icon.png">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<!--status bar(you have to leave 20 pixels)-->
+	<!--hide the user interface of the browser to maximize space(iphone)-->
+	<meta name="mobile-web-app-capable" content="yes">
+	<link rel="shortcut icon" sizes="192×192" href="img/shortcut-icon.png">
+	<!--hide the user interface of the browser to maximize space(android)-->
+
+	<!--Internet explorer-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<!--Bootstrap-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<!--CSS-->
+	<link rel="stylesheet" href="styles/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!--FontAwesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" />
+
+
+	<title>NYSL WebApp</title>
+</head>
+
+<body class="dark-blue">
+	<header class="container-fluid">
+		<div class="row lime-green">
+			<div class="d-none col-3 d-flex align-items-center justify-content-center">
+				<button id="btnBack" type="button" class="d-none btn btn-primary float-left ">Back</button>
+			</div>
+			<div class="col-6 text-center"><img class="logo-nysl img-responsive" src="img/logo.png" alt="Logo NYSL"></div>
+			<div class="col-3 d-flex align-items-center justify-content-center">
+				<button id="btnLogin" type="button" class="btn btn-primary float-right">Login</button>
+				<button id="btnSignOut" type="button" class="btn btn-primary float-right d-none">SignOut</button>
+				<button id="btnChat" type="button" class="btn btn-primary float-right d-none">Chat</button>
+			</div>
+		</div>
+	</header>
+	<!--PAGINA COMPLETA HOME / INDEX -->
+	<!--  <section  >
+            <div class="row">
+                <div class=" col justify-content-center text-center text-white sky-blue">
+                    <h2 id="title">Menu</h2>
+                </div>
+            </div>
+        </section>-->
+	<!--Section s.h -->
+	<section id="index" class="container-fluid dark-blue">
+
+		<br>
+		<br>
+		<br>
+		<br>
+		<div class="row text-center mb-5">
+			<div class="col">
+				<button id="btnTeams" type="button" class="btn btn-primary float-right">
+					Equipos<br>
+					<img class="logo-main" src="img/tshirt.png" alt="T-Shirt">
+				</button>
+			</div>
+			<div class="col">
+				<button id="btnGames" type="button" class="btn btn-primary float-left">
+					Partidos<br>
+					<img class="logo-main" src="img/futbol.png" alt="futbol ball">
+				</button>
+			</div>
+		</div>
+		<div class="row text-center">
+			<div class="col">
+				<button id="btnPlayfields" type="button" class="btn btn-primary float-right">
+					Campos<br>
+					<img class="logo-main" src="img/stadium.png" alt="stadium">
+				</button>
+			</div>
+			<div class="col">
+				<button id="btnAbout" type="button" class="btn btn-primary float-left">
+					Nosotros<br>
+					<img class="logo-main" src="img/users.png" alt="users">
+				</button>
+			</div>
+		</div>
+	</section>
+	<!--PAGINA COMPLETA TEAMS-->
+	<!--Section s.t.0 -->
+	<section id="teams" class="d-none container-fluid dark-blue">
+		<article class="accordion" id="accordionArticle">
+			<div class="row">
+				<div class=" col justify-content-center text-center text-white sky-blue">
+					<h2>Teams</h2>
+				</div>
+			</div>
+		</article>
+		<article class="panel-group " id="accordion">
+			<!--U1 s.t.1 -->
+			<div class="card dark-blue">
+				<div class="card-header text-center mb-0 ">
+					<div class="row lime-green p-1 align-items-center border">
+						<div class="col float-left"><img class="logo-team" src="img/u1.png" alt="Logo U1"></div>
+						<h3><a class="col mx-auto align-items-center text-white " aria-controls="infoU1" data-toggle="collapse"
+								href="#infoU1">River
+								<!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--></a></h3>
+						<div class="col float-right"><img class="logo-team" src="img/u1.png" alt="Logo U1"></div>
+					</div>
+				</div>
+				<div id="infoU1" class="collapse" data-parent="#accordion">
+					<div class="card-body white pt-1 pb-0 pl-0 pr-0">
+						<!--Games Statistics and schedule-->
+						<div class="touch col-md-12 mb-1">
+							<div class="row">
+								<div
+									class="col-md-4 text-white text-center d-flex align-items-center justify-content-center lime-green">
+									<h2>September<br>1<br>Sat.</h2>
+								</div>
+								<div class="col-md-8 dark-blue">
+									<div class="row">
+										<div class="col-sm text-white text-center">
+											<h3>9:30AM - A.J. Katzenmaier</h3>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm text-white text-center">
+											<h2><img class="logo-team-mini" src="img/u1.png" alt="Logo U1">River</h2>
+											<br>
+											<h2><img class="logo-team-mini" src="img/u2.png" alt="Logo U2">Boca</h2>
+										</div>
+										<div class="col-sm align-self-center text-white text-center">
+											<h2 class="flecha">></h2>
+											<!-- Agregado de mapa -->
+											<div class="t-mapAJKatzenmaier">
+												<iframe class="card-img-center"
+													src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.657018148475!2d-87.63125808505526!3d41.9002327720087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34e07f69da7%3A0x15e198c063fc787c!2sAJ+Katzenmaier+Elementary!5e0!3m2!1ses-419!2sar!4v1556114243843!5m2!1ses-419!2sar"
+													style="width:100%; height:150px; border:none; background:transparent; overflow:hidden;"
+													allowfullscreen></iframe>
+												<div class="card-body">
+													<p class="card-text">AJ Katzenmaier Elementary <br>24 W. Walton St., Chicago, IL 60610</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="touch col-md-12 border-bottom">
+							<div class="row">
+								<div
+									class="col-md-4 text-white text-center d-flex align-items-center justify-content-center lime-green">
+									<h2>September<br>8<br>Sat.</h2>
+								</div>
+								<div class="col-md-8 dark-blue">
+									<div class="row">
+										<div class="col-sm text-white text-center">
+											<h2>1:00PM - Marjorie P. Hart</h2>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm text-white text-center">
+											<h2><img class="logo-team-mini" src="img/u6.png" alt="Logo U6">Morón</h2>
+											<br>
+											<h2><img class="logo-team-mini" src="img/u1.png" alt="Logo U1">River</h2>
+										</div>
+										<div class="col-sm align-self-center text-white text-center">
+											<h2 class="flecha">></h2>
+											<!-- Agregado de mapa -->
+											<div class="t-mapMarjoriePHart">
+												<iframe class="card-img-center"
+													src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.2890673450765!2d-87.64816033505429!3d41.9296394701671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd30f2637f9d7%3A0xdbff5d5dfcfcfa35!2sMarjorie+P+Hart+Elementary!5e0!3m2!1ses-419!2sar!4v1556133324355!5m2!1ses-419!2sar"
+													style="width:100%; height:150px; border:none; background:transparent; overflow:hidden;"
+													allowfullscreen></iframe>
+												<div class="card-body">
+													<p class="card-text">Marjorie P Hart Elementary<br>2625 N. Orchard St., Chicago, IL 60614</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Statistics U1 -->
+						<div class="list-group text-center" id="statisticsU1">
+							<div class="list-group-item dark-blue rounded-0">
+								<h4 class="list-group-item-heading text-white">Played Matches</h4>
+								<p class="list-group-item-text lime-green text-white">10</p>
+							</div>
+							<div class="list-group-item dark-blue">
+								<h4 class="list-group-item-heading text-white">Win Games</h4>
+								<p class="list-group-item-text lime-green text-white">7</p>
+							</div>
+							<div class="list-group-item dark-blue">
+								<h4 class="list-group-item-heading text-white">Tie Games</h4>
+								<p class="list-group-item-text lime-green text-white">2</p>
+							</div>
+							<div class="list-group-item dark-blue rounded-0">
+								<h4 class="list-group-item-heading text-white">Lose Games</h4>
+								<p class="list-group-item-text lime-green text-white">1</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--U2 s.t.2 -->
+			<div class="card dark-blue">
+				<div class="card-header text-center mb-0 ">
+					<div class="row lime-green p-1 align-items-center border">
+						<div class="col float-left"><img class="logo-team" src="img/u2.png" alt="Logo U2"></div>
+						<h3><a class="col mx-auto align-items-center text-white " aria-controls="infoU2" data-toggle="collapse"
+								href="#infoU2">Boca
+								<!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--></a></h3>
+						<div class="col float-right"><img class="logo-team" src="img/u2.png" alt="Logo U2"></div>
+					</div>
+				</div>
+				<div id="infoU2" class="collapse" data-parent="#accordion">
+					<div class="card-body white pt-1 pb-0 pl-0 pr-0">
+						<!--Games Statistics and schedule-->
+						<div class="touch col-md-12 mb-1">
+							<div class="row">
+								<div
+									class="col-md-4 text-white text-center d-flex align-items-center justify-content-center lime-green">
+									<h2>September<br>1<br>Sat.</h2>
+								</div>
+								<div class="col-md-8 dark-blue">
+									<div class="row">
+										<div class="col-sm text-white text-center">
+											<h2>1:00PM - Greenbay</h2>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm text-white text-center">
+											<h2><img class="logo-team-mini" src="img/u3.png" alt="Logo U3">Racing</h2>
+											<br>
+											<h2><img class="logo-team-mini" src="img/u2.png" alt="Logo U2">Boca</h2>
+										</div>
+										<div class="col-sm align-self-center text-white text-center">
+											<h2 class="flecha">></h2>
+											<!-- Agregado de mapa -->
+											<div class="t-mapGreenbay">
+												<iframe class="card-img-center"
+													src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.0242194234206!2d-87.6400254350548!3d41.91383807115686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd3407260c45b%3A0xb351205fae50c6f3!2sGreenbay+Elementary!5e0!3m2!1ses-419!2sar!4v1556120319678!5m2!1ses-419!2sar"
+													style="width:100%; height:150px; border:none; background:transparent; overflow:hidden;"
+													allowfullscreen></iframe>
+												<div class="card-body">
+													<p class="card-text">Greenbay Elementary<br>1734 N. Orleans St., Chicago, IL 60614</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="touch col-md-12 mb-1">
+							<div class="row">
+								<div
+									class="col-md-4 text-white text-center d-flex align-items-center justify-content-center lime-green">
+									<h2>September<br>15<br>Sat.</h2>
+								</div>
+								<div class="col-md-8 dark-blue">
+									<div class="row">
+										<div class="col-sm text-white text-center">
+											<h2>9:30AM - North</h2>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm text-white text-center">
+											<h2><img class="logo-team-mini" src="img/u2.png" alt="Logo U2">Boca</h2>
+											<br>
+											<h2><img class="logo-team-mini" src="img/u4.png" alt="Logo U4">Tigre</h2>
+										</div>
+										<div class="col-sm align-self-center text-white text-center">
+											<h2 class="flecha">></h2>
+											<!-- Agregado de mapa -->
+											<div class="t-mapNorth">
+												<iframe class="card-img-center"
+													src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1765.5760574806247!2d-87.64659584440717!3d41.90719634018161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd33af14860a5%3A0x5736e62f19086c62!2sNorth+Elementary!5e0!3m2!1ses-419!2sar!4v1556133541270!5m2!1ses-419!2sar"
+													style="width:100%; height:150px; border:none; background:transparent; overflow:hidden;"
+													allowfullscreen></iframe>
+												<div class="card-body">
+													<p class="card-text">North Elementary<br>1409 N. Ogden Ave., Chicago, IL 60610</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="touch col-md-12 mb-1">
+							<div class="row">
+								<div
+									class="col-md-4 text-white text-center d-flex align-items-center justify-content-center lime-green">
+									<h2>September<br>22<br>Sat.</h2>
+								</div>
+								<div class="col-md-8 dark-blue">
+									<div class="row">
+										<div class="col-sm text-white text-center">
+											<h2>1:00PM - Howard A. Yeager</h2>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm text-white text-center">
+											<h2><img class="logo-team-mini" src="img/u2.png" alt="Logo U2">Boca</h2>
+											<br>
+											<h2><img class="logo-team-mini" src="img/u6.png" alt="Logo U6">Morón</h2>
+										</div>
+										<div class="col-sm align-self-center text-white text-center">
+											<h2 class="flecha">></h2>
+											<!-- Agregado de mapa -->
+											<div class="t-mapHowardAYeager">
+												<iframe class="card-img-center"
+													src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11801.080246623287!2d-87.8538811!3d42.3154383!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8b51fa5d6efe771a!2sHoward+A.+Yeager+School+(PREK-K)!5e0!3m2!1ses-419!2sar!4v1564149577721!5m2!1ses-419!2sar"
+													style="width:100%; height:150px; border:none; background:transparent; overflow:hidden;"
+													allowfullscreen></iframe>
+												<div class="card-body">
+													<p class="card-text">Howard A Yeager Elementary.<br>1811 Morrow Ave, North Chicago, IL 60064
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Statistics U2 -->
+						<div class="list-group text-center" id="statisticsU2">
+							<div class="list-group-item dark-blue rounded-0">
+								<h4 class="list-group-item-heading text-white">Played Matches</h4>
+								<p class="list-group-item-text lime-green text-white">12</p>
+							</div>
+							<div class="list-group-item dark-blue">
+								<h4 class="list-group-item-heading text-white">Win Games</h4>
+								<p class="list-group-item-text lime-green text-white">6</p>
+							</div>
+							<div class="list-group-item dark-blue">
+								<h4 class="list-group-item-heading text-white">Tie Games</h4>
+								<p class="list-group-item-text lime-green text-white">1</p>
+							</div>
+							<div class="list-group-item dark-blue rounded-0">
+								<h4 class="list-group-item-heading text-white">Lose Games</h4>
+								<p class="list-group-item-text lime-green text-white">5</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--U3 s.t.3 -->
+			<div class="card dark-blue">
+				<div class="card-header text-center mb-0 ">
+					<div class="row lime-green p-1 align-items-center border">
+						<div class="col float-left"><img class="logo-team" src="img/u3.png" alt="Logo U3"></div>
+						<h3><a class="col mx-auto align-items-center text-white " aria-controls="infoU3" data-toggle="collapse"
+								href="#infoU3">Racing
+								<!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--></a></h3>
+						<div class="col float-right"><img class="logo-team" src="img/u3.png" alt="Logo U3"></div>
+					</div>
+				</div>
+				<div id="infoU3" class="collapse" data-parent="#accordion">
+					<div class="card-body white pt-1 pb-0 pl-0 pr-0">
+						<!--Games Statistics and schedule-->
+						<div class="touch col-md-12 mb-1">
+							<div class="row">
+								<div
+									class="col-md-4 text-white text-center d-flex align-items-center justify-content-center lime-green">
+									<h2>September<br>1<br>Sat.</h2>
+								</div>
+								<div class="col-md-8 dark-blue">
+									<div class="row">
+										<div class="col-sm text-white text-center">
+											<h2>1:00PM - Greenbay</h2>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm text-white text-center">
+											<h2><img class="logo-team-mini" src="img/u3.png" alt="Logo U3">Racing</h2>
+											<br>
+											<h2><img class="logo-team-mini" src="img/u2.png" alt="Logo U2">Boca</h2>
+										</div>
+										<div class="col-sm align-self-center text-white text-center">
+											<h2 class="flecha">></h2>
+											<!-- Agregado de mapa -->
+											<div class="t-mapGreenbay">
+												<iframe class="card-img-center"
+													src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.0242194234206!2d-87.6400254350548!3d41.91383807115686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd3407260c45b%3A0xb351205fae50c6f3!2sGreenbay+Elementary!5e0!3m2!1ses-419!2sar!4v1556120319678!5m2!1ses-419!2sar"
+													style="width:100%; height:150px; border:none; background:transparent; overflow:hidden;"
+													allowfullscreen></iframe>
+												<div class="card-body">
+													<p class="card-text">Greenbay Elementary<br>1734 N. Orleans St., Chicago, IL 60614</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="touch col-md-12 mb-1">
+							<div class="row">
+								<div
+									class="col-md-4 text-white text-center d-flex align-items-center justify-content-center lime-green">
+									<h2>September<br>15<br>Sat.</h2>
+								</div>
+								<div class="col-md-8 dark-blue">
+									<div class="row">
+										<div class="col-sm text-white text-center">
+											<h2>1:00PM - AJ Katzenmaier</h2>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm text-white text-center">
+											<h2><img class="logo-team-mini" src="img/u3.png" alt="Logo U3">Racing</h2>
+											<br>
+											<h2><img class="logo-team-mini" src="img/u5.png" alt="Logo U5">Lanús</h2>
+										</div>
+										<div class="col-sm align-self-center text-white text-center">
+											<h2 class="flecha">></h2>
+											<!-- Agregado de mapa -->
+											<div class="t-mapAJKatzenmaier">
+												<iframe class="card-img-center"
+													src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.657018148475!2d-87.63125808505526!3d41.9002327720087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34e07f69da7%3A0x15e198c063fc787c!2sAJ+Katzenmaier+Elementary!5e0!3m2!1ses-419!2sar!4v1556114243843!5m2!1ses-419!2sar"
+													style="width:100%; height:150px; border:none; background:transparent; overflow:hidden;"
+													allowfullscreen></iframe>
+												<div class="card-body">
+													<p class="card-text">AJ Katzenmaier Elementary <br>24 W. Walton St., Chicago, IL 60610</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="touch col-md-12 mb-1">
+							<div class="row">
+								<div
+									class="col-md-4 text-white text-center d-flex align-items-center justify-content-center lime-green">
+									<h2>September<br>22<br>Sat.</h2>
+								</div>
+								<div class="col-md-8 dark-blue">
+									<div class="row">
+										<div class="col-sm text-white text-center">
+											<h2>9:30AM - South</h2>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm text-white text-center">
+											<h2><img class="logo-team-mini" src="img/u1.png" alt="Logo U1">River</h2>
+											<br>
+											<h2><img class="logo-team-mini" src="img/u3.png" alt="Logo U3">Racing</h2>
+										</div>
+										<div class="col-sm align-self-center text-white text-center">
+											<h2 class="flecha">></h2>
+											<!-- Agregado de mapa -->
+											<div class="t-mapSouth">
+												<iframe class="card-img-center"
+													src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.7477648265644!2d-87.65355538505459!3d41.91978077078475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd3196fb41dc7%3A0x970be7f7d6336df5!2s2101+N+Fremont+St%2C+Chicago%2C+IL+60614%2C+EE.+UU.!5e0!3m2!1ses-419!2sar!4v1557302353821!5m2!1ses-419!2sar"
+													style="width:100%; height:150px; border:none; background:transparent; overflow:hidden;"
+													allowfullscreen></iframe>
+												<div class="card-body">
+													<p class="card-text">South Elementary<br>2101 N. Fremont St., Chicago, IL 60614</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Statistics U3 -->
+						<div class="list-group text-center" id="statisticsU3">
+							<div class="list-group-item dark-blue rounded-0">
+								<h4 class="list-group-item-heading text-white">Played Matches</h4>
+								<p class="list-group-item-text lime-green text-white">10</p>
+							</div>
+							<div class="list-group-item dark-blue">
+								<h4 class="list-group-item-heading text-white">Win Games</h4>
+								<p class="list-group-item-text lime-green text-white">8</p>
+							</div>
+							<div class="list-group-item dark-blue">
+								<h4 class="list-group-item-heading text-white">Tie Games</h4>
+								<p class="list-group-item-text lime-green text-white">0</p>
+							</div>
+							<div class="list-group-item dark-blue rounded-0">
+								<h4 class="list-group-item-heading text-white">Lose Games</h4>
+								<p class="list-group-item-text lime-green text-white">2</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--U4 s.t.4 -->
+			<div class="card dark-blue">
+				<div class="card-header text-center mb-0 ">
+					<div class="row lime-green p-1 align-items-center border">
+						<div class="col float-left"><img class="logo-team" src="img/u4.png" alt="Logo U4"></div>
+						<h3><a class="col mx-auto align-items-center text-white " aria-controls="infoU4" data-toggle="collapse"
+								href="#infoU4">Tigre
+								<!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--></a></h3>
+						<div class="col float-right"><img class="logo-team" src="img/u4.png" alt="Logo U4"></div>
+					</div>
+				</div>
+				<div id="infoU4" class="collapse" data-parent="#accordion">
+					<div class="card-body white pt-1 pb-0 pl-0 pr-0">
+						<!--Games Statistics and schedule-->
+						<div class="touch col-md-12 mb-1">
+							<div class="row">
+								<div
+									class="col-md-4 text-white text-center d-flex align-items-center justify-content-center lime-green">
+									<h2>September<br>1<br>Sat.</h2>
+								</div>
+								<div class="col-md-8 dark-blue">
+									<div class="row">
+										<div class="col-sm text-white text-center">
+											<h2>9:30AM - AJ Katzenmaier</h2>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm text-white text-center">
+											<h2><img class="logo-team-mini" src="img/u1.png" alt="Logo U1">River</h2>
+											<br>
+											<h2><img class="logo-team-mini" src="img/u4.png" alt="Logo U4">Tigre</h2>
+										</div>
+										<div class="col-sm align-self-center text-white text-center">
+											<h2 class="flecha">></h2>
+											<!-- Agregado de mapa -->
+											<div class="t-mapAJKatzenmaier">
+												<iframe class="card-img-center"
+													src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.657018148475!2d-87.63125808505526!3d41.9002327720087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34e07f69da7%3A0x15e198c063fc787c!2sAJ+Katzenmaier+Elementary!5e0!3m2!1ses-419!2sar!4v1556114243843!5m2!1ses-419!2sar"
+													style="width:100%; height:150px; border:none; background:transparent; overflow:hidden;"
+													allowfullscreen></iframe>
+												<div class="card-body">
+													<p class="card-text">AJ Katzenmaier Elementary <br>24 W. Walton St., Chicago, IL 60610</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="touch col-md-12 mb-1">
+							<div class="row">
+								<div
+									class="col-md-4 text-white text-center d-flex align-items-center justify-content-center lime-green">
+									<h2>September<br>15<br>Sat.</h2>
+								</div>
+								<div class="col-md-8 dark-blue">
+									<div class="row">
+										<div class="col-sm text-white text-center">
+											<h2>9:30AM - North</h2>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm text-white text-center">
+											<h2><img class="logo-team-mini" src="img/u2.png" alt="Logo U2">Boca</h2>
+											<br>
+											<h2><img class="logo-team-mini" src="img/u4.png" alt="Logo U4">Tigre</h2>
+										</div>
+										<div class="col-sm align-self-center text-white text-center">
+											<h2 class="flecha">></h2>
+											<!-- Agregado de mapa -->
+											<div class="t-mapNorth">
+												<iframe class="card-img-center"
+													src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1765.5760574806247!2d-87.64659584440717!3d41.90719634018161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd33af14860a5%3A0x5736e62f19086c62!2sNorth+Elementary!5e0!3m2!1ses-419!2sar!4v1556133541270!5m2!1ses-419!2sar"
+													style="width:100%; height:150px; border:none; background:transparent; overflow:hidden;"
+													allowfullscreen></iframe>
+												<div class="card-body">
+													<p class="card-text">North Elementary<br>1409 N. Ogden Ave., Chicago, IL 60610</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="touch col-md-12 mb-1">
+							<div class="row">
+								<div
+									class="col-md-4 text-white text-center d-flex align-items-center justify-content-center lime-green">
+									<h2>September<br>29<br>Sat.</h2>
+								</div>
+								<div class="col-md-8 dark-blue">
+									<div class="row">
+										<div class="col-sm text-white text-center">
+											<h2>9:30AM - Greenbay</h2>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm text-white text-center">
+											<h2><img class="logo-team-mini" src="img/u4.png" alt="Logo U4">Tigre</h2>
+											<br>
+											<h2><img class="logo-team-mini" src="img/u5.png" alt="Logo U5">Lanús</h2>
+										</div>
+										<div class="col-sm align-self-center text-white text-center">
+											<h2 class="flecha">></h2>
+											<!-- Agregado de mapa -->
+											<div class="t-mapGreenbay">
+												<iframe class="card-img-center"
+													src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.0242194234206!2d-87.6400254350548!3d41.91383807115686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd3407260c45b%3A0xb351205fae50c6f3!2sGreenbay+Elementary!5e0!3m2!1ses-419!2sar!4v1556120319678!5m2!1ses-419!2sar"
+													style="width:100%; height:150px; border:none; background:transparent; overflow:hidden;"
+													allowfullscreen></iframe>
+												<div class="card-body">
+													<p class="card-text">Greenbay Elementary<br>1734 N. Orleans St., Chicago, IL 60614</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Statistics U4 -->
+						<div class="list-group text-center" id="statisticsU4">
+							<div class="list-group-item dark-blue rounded-0">
+								<h4 class="list-group-item-heading text-white">Played Matches</h4>
+								<p class="list-group-item-text lime-green text-white">12</p>
+							</div>
+							<div class="list-group-item dark-blue">
+								<h4 class="list-group-item-heading text-white">Win Games</h4>
+								<p class="list-group-item-text lime-green text-white">3</p>
+							</div>
+							<div class="list-group-item dark-blue">
+								<h4 class="list-group-item-heading text-white">Tie Games</h4>
+								<p class="list-group-item-text lime-green text-white">2</p>
+							</div>
+							<div class="list-group-item dark-blue rounded-0">
+								<h4 class="list-group-item-heading text-white">Lose Games</h4>
+								<p class="list-group-item-text lime-green text-white">7</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--U5 s.t.5 -->
+			<div class="card dark-blue">
+				<div class="card-header text-center mb-0 ">
+					<div class="row lime-green p-1 align-items-center border">
+						<div class="col"><img class="logo-team" src="img/u5.png" alt="Logo U5"></div>
+						<h3><a class="align-items-center text-white " aria-controls="infoU5" data-toggle="collapse"
+								href="#infoU5">Lanús</a></h3>
+						<div class="col"><img class="logo-team" src="img/u5.png" alt="Logo U5"></div>
+					</div>
+				</div>
+				<div id="infoU5" class="collapse" data-parent="#accordion">
+					<div class="card-body white pt-1 pb-0 pl-0 pr-0">
+						<!--Games Statistics and schedule-->
+						<div class="touch col-md-12 mb-1">
+							<div class="row">
+								<div
+									class="col-md-4 text-white text-center d-flex align-items-center justify-content-center lime-green">
+									<h2>September<br>8<br>Sat.</h2>
+								</div>
+								<div class="col-md-8 dark-blue">
+									<div class="row">
+										<div class="col-sm text-white text-center">
+											<h2>9:30AM - Howard A Yeager</h2>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm text-white text-center">
+											<h2><img class="logo-team-mini" src="img/u5.png" alt="Logo U5">Lanús</h2>
+											<br>
+											<h2><img class="logo-team-mini" src="img/u6.png" alt="Logo U6">Morón</h2>
+										</div>
+										<div class="col-sm align-self-center text-white text-center">
+											<h2 class="flecha">></h2>
+											<!-- Agregado de mapa -->
+											<div class="t-mapHowardAYeager">
+												<iframe class="card-img-center"
+													src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11801.080246623287!2d-87.8538811!3d42.3154383!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8b51fa5d6efe771a!2sHoward+A.+Yeager+School+(PREK-K)!5e0!3m2!1ses-419!2sar!4v1564149577721!5m2!1ses-419!2sar"
+													style="width:100%; height:150px; border:none; background:transparent; overflow:hidden;"
+													allowfullscreen></iframe>
+												<div class="card-body">
+													<p class="card-text">Howard A Yeager Elementary.<br>1811 Morrow Ave, North Chicago, IL 60064
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="touch col-md-12 mb-1">
+							<div class="row">
+								<div
+									class="col-md-4 text-white text-center d-flex align-items-center justify-content-center lime-green">
+									<h2>September<br>15<br>Sat.</h2>
+								</div>
+								<div class="col-md-8 dark-blue">
+									<div class="row">
+										<div class="col-sm text-white text-center">
+											<h2>1:00PM - AJ Katzenmaier</h2>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm text-white text-center">
+											<h2><img class="logo-team-mini" src="img/u3.png" alt="Logo U3">Racing</h2>
+											<br>
+											<h2><img class="logo-team-mini" src="img/u5.png" alt="Logo U5">Lanús</h2>
+										</div>
+										<div class="col-sm align-self-center text-white text-center">
+											<h2 class="flecha">></h2>
+											<!-- Agregado de mapa -->
+											<div class="t-mapAJKatzenmaier">
+												<iframe class="card-img-center"
+													src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.657018148475!2d-87.63125808505526!3d41.9002327720087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34e07f69da7%3A0x15e198c063fc787c!2sAJ+Katzenmaier+Elementary!5e0!3m2!1ses-419!2sar!4v1556114243843!5m2!1ses-419!2sar"
+													style="width:100%; height:150px; border:none; background:transparent; overflow:hidden;"
+													allowfullscreen></iframe>
+												<div class="card-body">
+													<p class="card-text">AJ Katzenmaier Elementary <br>24 W. Walton St., Chicago, IL 60610</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="touch col-md-12 mb-1">
+							<div class="row">
+								<div
+									class="col-md-4 text-white text-center d-flex align-items-center justify-content-center lime-green">
+									<h2>September<br>29<br>Sat.</h2>
+								</div>
+								<div class="col-md-8 dark-blue">
+									<div class="row">
+										<div class="col-sm text-white text-center">
+											<h2>9:30AM - Greenbay</h2>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm text-white text-center">
+											<h2><img class="logo-team-mini" src="img/u4.png" alt="Logo U4">Tigre</h2>
+											<br>
+											<h2><img class="logo-team-mini" src="img/u5.png" alt="Logo U5">Lanús</h2>
+										</div>
+										<div class="col-sm align-self-center text-white text-center">
+											<h2 class="flecha">></h2>
+											<!-- Agregado de mapa -->
+											<div class="t-mapGreenbay">
+												<iframe class="card-img-center"
+													src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.0242194234206!2d-87.6400254350548!3d41.91383807115686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd3407260c45b%3A0xb351205fae50c6f3!2sGreenbay+Elementary!5e0!3m2!1ses-419!2sar!4v1556120319678!5m2!1ses-419!2sar"
+													style="width:100%; height:150px; border:none; background:transparent; overflow:hidden;"
+													allowfullscreen></iframe>
+												<div class="card-body">
+													<p class="card-text">Greenbay Elementary<br>1734 N. Orleans St., Chicago, IL 60614</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Statistics U5 -->
+						<div class="list-group text-center" id="statisticsU5">
+							<div class="list-group-item dark-blue rounded-0">
+								<h4 class="list-group-item-heading text-white">Played Matches</h4>
+								<p class="list-group-item-text lime-green text-white">10</p>
+							</div>
+							<div class="list-group-item dark-blue">
+								<h4 class="list-group-item-heading text-white">Win Games</h4>
+								<p class="list-group-item-text lime-green text-white">9</p>
+							</div>
+							<div class="list-group-item dark-blue">
+								<h4 class="list-group-item-heading text-white">Tie Games</h4>
+								<p class="list-group-item-text lime-green text-white">1</p>
+							</div>
+							<div class="list-group-item dark-blue rounded-0">
+								<h4 class="list-group-item-heading text-white">Lose Games</h4>
+								<p class="list-group-item-text lime-green text-white">0</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--U6 s.t.6 -->
+			<div class="card dark-blue">
+				<div class="card-header text-center mb-0 ">
+					<div class="row lime-green p-1 align-items-center border">
+						<div class="col"><img class="logo-team" src="img/u6.png" alt="Logo U6"></div>
+						<h3><a class="align-items-center text-white " aria-controls="infoU6" data-toggle="collapse"
+								href="#infoU6">Morón</a></h3>
+						<div class="col"><img class="logo-team" src="img/u6.png" alt="Logo U6"></div>
+					</div>
+				</div>
+				<div id="infoU6" class="collapse" data-parent="#accordion">
+					<div class="card-body white pt-1 pb-0 pl-0 pr-0">
+						<!--Games Statistics and schedule-->
+						<div class="touch col-md-12 mb-1">
+							<div class="row">
+								<div
+									class="col-md-4 text-white text-center d-flex align-items-center justify-content-center lime-green">
+									<h2>September<br>8<br>Sat.</h2>
+								</div>
+								<div class="col-md-8 dark-blue">
+									<div class="row">
+										<div class="col-sm text-white text-center">
+											<h2>9:30AM - Howard A Yeager</h2>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm text-white text-center">
+											<h2><img class="logo-team-mini" src="img/u5.png" alt="Logo U5">Lanús</h2>
+											<br>
+											<h2><img class="logo-team-mini" src="img/u6.png" alt="Logo U6">Morón</h2>
+										</div>
+										<div class="col-sm align-self-center text-white text-center">
+											<h2 class="flecha">></h2>
+											<!-- Agregado de mapa -->
+											<div class="t-mapHowardAYeager">
+												<iframe class="card-img-center"
+													src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11801.080246623287!2d-87.8538811!3d42.3154383!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8b51fa5d6efe771a!2sHoward+A.+Yeager+School+(PREK-K)!5e0!3m2!1ses-419!2sar!4v1564149577721!5m2!1ses-419!2sar"
+													style="width:100%; height:150px; border:none; background:transparent; overflow:hidden;"
+													allowfullscreen></iframe>
+												<div class="card-body">
+													<p class="card-text">Howard A Yeager Elementary.<br>1811 Morrow Ave, North Chicago, IL 60064
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="touch col-md-12 mb-1">
+							<div class="row">
+								<div
+									class="col-md-4 text-white text-center d-flex align-items-center justify-content-center lime-green">
+									<h2>September<br>15<br>Sat.</h2>
+								</div>
+								<div class="col-md-8 dark-blue">
+									<div class="row">
+										<div class="col-sm text-white text-center">
+											<h2>1:00PM - Marjorie P Hart</h2>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm text-white text-center">
+											<h2><img class="logo-team-mini" src="img/u6.png" alt="Logo U6">Morón</h2>
+											<br>
+											<h2><img class="logo-team-mini" src="img/u1.png" alt="Logo U1">River</h2>
+										</div>
+										<div class="col-sm align-self-center text-white text-center">
+											<h2 class="flecha">></h2>
+											<!-- Agregado de mapa -->
+											<div class="t-mapMarjoriePHart">
+												<iframe class="card-img-center"
+													src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.2890673450765!2d-87.64816033505429!3d41.9296394701671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd30f2637f9d7%3A0xdbff5d5dfcfcfa35!2sMarjorie+P+Hart+Elementary!5e0!3m2!1ses-419!2sar!4v1556133324355!5m2!1ses-419!2sar"
+													style="width:100%; height:150px; border:none; background:transparent; overflow:hidden;"
+													allowfullscreen></iframe>
+												<div class="card-body">
+													<p class="card-text">Marjorie P Hart Elementary<br>2625 N. Orchard St., Chicago, IL 60614</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="touch col-md-12 mb-1">
+							<div class="row">
+								<div
+									class="col-md-4 text-white text-center d-flex align-items-center justify-content-center lime-green">
+									<h2>September<br>22<br>Sat.</h2>
+								</div>
+								<div class="col-md-8 dark-blue">
+									<div class="row">
+										<div class="col-sm text-white text-center">
+											<h2>1:00PM - Howard A Yeager</h2>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm text-white text-center">
+											<h2><img class="logo-team-mini" src="img/u2.png" alt="Logo U2">Boca</h2>
+											<br>
+											<h2><img class="logo-team-mini" src="img/u6.png" alt="Logo U6">Morón</h2>
+										</div>
+										<div class="col-sm align-self-center text-white text-center">
+											<h2 class="flecha">></h2>
+											<!-- Agregado de mapa -->
+											<div class="t-mapHowardAYeager">
+												<iframe class="card-img-center"
+													src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11801.080246623287!2d-87.8538811!3d42.3154383!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8b51fa5d6efe771a!2sHoward+A.+Yeager+School+(PREK-K)!5e0!3m2!1ses-419!2sar!4v1564149577721!5m2!1ses-419!2sar"
+													style="width:100%; height:150px; border:none; background:transparent; overflow:hidden;"
+													allowfullscreen></iframe>
+												<div class="card-body">
+													<p class="card-text">Howard A Yeager Elementary.<br>1811 Morrow Ave, North Chicago, IL 60064
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Statistics U6 -->
+						<div class="list-group text-center" id="statisticsU6">
+							<div class="list-group-item dark-blue rounded-0">
+								<h4 class="list-group-item-heading text-white">Played Matches</h4>
+								<p class="list-group-item-text lime-green text-white">10</p>
+							</div>
+							<div class="list-group-item dark-blue">
+								<h4 class="list-group-item-heading text-white">Win Games</h4>
+								<p class="list-group-item-text lime-green text-white">7</p>
+							</div>
+							<div class="list-group-item dark-blue">
+								<h4 class="list-group-item-heading text-white">Tie Games</h4>
+								<p class="list-group-item-text lime-green text-white">2</p>
+							</div>
+							<div class="list-group-item dark-blue rounded-0">
+								<h4 class="list-group-item-heading text-white">Lose Games</h4>
+								<p class="list-group-item-text lime-green text-white">1</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</article>
+	</section>
+	<!--PAGINA COMPLETA GAMES-->
+	<!--Section s.g -->
+	<section id="games" class="d-none container-fluid ">
+		<article class="row">
+			<div class="col-12 text-center text-white sky-blue border-bottom">
+				<h2>Games</h2>
+			</div>
+		</article>
+		<!--Septiembre-->
+		<article class="row">
+			<div class="col-12 sky-blue text-white">
+				<h2 class="float-left">September</h2>
+				<h2 class="float-right">2019</h2>
+			</div>
+			<div class="col-12 border border-bottom-0 b-lime-green">
+				<div class="row">
+					<div class="col-md-4 text-white text-center d-flex align-items-center lime-green">
+						<h2 class="col">22<br>DOM</h2>
+						<!--<h2 id="btnForo22S">Foro</h2>-->
+						<!--<button id="btnForum1" type="button" class="col btn btn-primary float-right">Forum chat</button>-->
+						<a id="22-sept" title="chat" href="#" class="d-none  chatButton col float-left"><img class="globoChat"
+								src="img/globoChat.png" alt="Imagen no encontrada" /></a>
+					</div>
+					<div class="touch col-md-8 dark-blue">
+						<div class="row">
+							<div class="col-sm text-white text-center">
+								<h2>9:30AM</h2>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm text-white text-center">
+								<h2><img class="logo-team-mini" src="img/u1.png" alt="Logo U1">River</h2>
+								<br>
+								<h2><img class="logo-team-mini" src="img/u2.png" alt="Logo U2">Boca</h2>
+							</div>
+							<div class="col-sm align-self-center text-white text-center">
+								<!-- Agregado de mapa -->
+								<div class="g-mapAJKatzenmaier">
+									<iframe class="card-img-center"
+										src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.657018148475!2d-87.63125808505526!3d41.9002327720087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34e07f69da7%3A0x15e198c063fc787c!2sAJ+Katzenmaier+Elementary!5e0!3m2!1ses-419!2sar!4v1556114243843!5m2!1ses-419!2sar"
+										style="width:100%; height:150px; border:none; background:transparent; overflow:hidden;"
+										allowfullscreen></iframe>
+									<div class="card-body">
+										<p class="card-text">AJ Katzenmaier Elementary <br>24 W. Walton St., Chicago, IL 60610</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</article>
+		<!--Octubre-->
+		<article class="row">
+			<div class="col-12 sky-blue text-white border border-bottom-0">
+				<h2 class="float-left">October</h2>
+				<h2 class="float-right">2019</h2>
+			</div>
+			<div class="col-12">
+				<div class="row border border-bottom-0">
+					<div class="col-md-4 text-white text-center d-flex align-items-center lime-green">
+						<h2 class="col">6<br>DOM</h2>
+						<a id="06-oct-a" title="chat" href="#" class="d-none chatButton col float-left"><img class="globoChat"
+								src="img/globoChat.png" alt="Imagen no encontrada" /></a>
+					</div>
+					<div class="touch col-md-8 dark-blue">
+						<div class="row">
+							<div class="col-sm text-white text-center">
+								<h2>9:30AM</h2>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm text-white text-center">
+								<h2><img class="logo-team-mini" src="img/u2.png" alt="Logo U2">Boca</h2>
+								<br>
+								<h2><img class="logo-team-mini" src="img/u4.png" alt="Logo U4">Tigre</h2>
+							</div>
+							<div class="col-sm align-self-center text-white text-center">
+								<!-- Agregado de mapa -->
+								<div class="g-mapMarjoriePHart">
+									<iframe class="card-img-center"
+										src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.2890673450765!2d-87.64816033505429!3d41.9296394701671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd30f2637f9d7%3A0xdbff5d5dfcfcfa35!2sMarjorie+P+Hart+Elementary!5e0!3m2!1ses-419!2sar!4v1556133324355!5m2!1ses-419!2sar"
+										style="width:100%; height:150px; border:none; background:transparent; overflow:hidden;"
+										allowfullscreen></iframe>
+									<div class="card-body">
+										<p class="card-text">Marjorie P Hart Elementary<br>2625 N. Orchard St., Chicago, IL 60614</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row border border-bottom-0">
+					<div class="col-md-4 text-white text-center d-flex align-items-center justify-content-center lime-green">
+						<h2 class="col">6<br>DOM</h2>
+						<a id="06-oct-b" title="chat" href="#" class="d-none chatButton col float-left"><img class="globoChat"
+								src="img/globoChat.png" alt="Imagen no encontrada" /></a>
+					</div>
+					<div class="touch col-md-8 dark-blue">
+						<div class="row">
+							<div class="col-sm text-white text-center">
+								<h2>1:00PM</h2>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm text-white text-center">
+								<h2><img class="logo-team-mini" src="img/u5.png" alt="Logo U5">Lanus</h2>
+								<br>
+								<h2><img class="logo-team-mini" src="img/u6.png" alt="Logo U6">Morón</h2>
+							</div>
+							<div class="col-sm align-self-center text-white text-center">
+								<!-- Agregado de mapa -->
+								<div class="g-mapNorth">
+									<iframe class="card-img-center"
+										src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1765.5760574806247!2d-87.64659584440717!3d41.90719634018161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd33af14860a5%3A0x5736e62f19086c62!2sNorth+Elementary!5e0!3m2!1ses-419!2sar!4v1556133541270!5m2!1ses-419!2sar"
+										style="width:100%; height:150px; border:none; background:transparent; overflow:hidden;"
+										allowfullscreen></iframe>
+									<div class="card-body">
+										<p class="card-text">North Elementary<br>1409 N. Ogden Ave., Chicago, IL 60610</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row border border-bottom-0">
+					<div class="col-md-4 text-white text-center d-flex align-items-center justify-content-center lime-green">
+						<h2 class="col">13<br>DOM</h2>
+						<a id="13-oct-a" title="chat" href="#" class="d-none chatButton col float-left"><img class="globoChat"
+								src="img/globoChat.png" alt="Imagen no encontrada" /></a>
+					</div>
+					<div class="touch col-md-8 dark-blue">
+						<div class="row">
+							<div class="col-sm text-white text-center">
+								<h2>9:30AM</h2>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm text-white text-center">
+								<h2><img class="logo-team-mini" src="img/u2.png" alt="Logo U2">Boca</h2>
+								<br>
+								<h2><img class="logo-team-mini" src="img/u1.png" alt="Logo U1">River</h2>
+							</div>
+							<div class="col-sm align-self-center text-white text-center">
+								<!-- Agregado de mapa -->
+								<div class="g-mapGreenbay">
+									<iframe class="card-img-center"
+										src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.0242194234206!2d-87.6400254350548!3d41.91383807115686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd3407260c45b%3A0xb351205fae50c6f3!2sGreenbay+Elementary!5e0!3m2!1ses-419!2sar!4v1556120319678!5m2!1ses-419!2sar"
+										style="width:100%; height:150px; border:none; background:transparent; overflow:hidden;"
+										allowfullscreen></iframe>
+									<div class="card-body">
+										<p class="card-text">Greenbay Elementary<br>1734 N. Orleans St., Chicago, IL 60614</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row border border-bottom-0">
+					<div class="col-md-4 text-white text-center d-flex align-items-center justify-content-center lime-green">
+						<h2 class="col">13<br>DOM</h2>
+						<a id="13-oct-b" title="chat" href="#" class="d-none chatButton col float-left"><img class="globoChat"
+								src="img/globoChat.png" alt="Imagen no encontrada" /></a>
+					</div>
+					<div class="touch col-md-8 dark-blue">
+						<div class="row">
+							<div class="col-sm text-white text-center">
+								<h2>9:30AM</h2>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm text-white text-center">
+								<h2><img class="logo-team-mini" src="img/u3.png" alt="Logo U3">Racing</h2>
+								<br>
+								<h2><img class="logo-team-mini" src="img/u4.png" alt="Logo U4">Tigre</h2>
+							</div>
+							<div class="col-sm align-self-center text-white text-center">
+								<!-- Agregado de mapa -->
+								<div class="g-mapSouth">
+									<iframe class="card-img-center"
+										src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.7477648265644!2d-87.65355538505459!3d41.91978077078475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd3196fb41dc7%3A0x970be7f7d6336df5!2s2101+N+Fremont+St%2C+Chicago%2C+IL+60614%2C+EE.+UU.!5e0!3m2!1ses-419!2sar!4v1557302353821!5m2!1ses-419!2sar"
+										style="width:100%; height:150px; border:none; background:transparent; overflow:hidden;"
+										allowfullscreen></iframe>
+									<div class="card-body">
+										<p class="card-text">South Elementary<br>2101 N. Fremont St., Chicago, IL 60614</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</article>
+	</section>
+	<!--PAGINA COMPLETA PLAYFIELDS-->
+	<!--Section s.p -->
+	<section id="playfields" class=" d-none container-fluid  dark-blue">
+		<div class="row">
+			<h2 class="col-12 text-center text-white sky-blue">Playfields</h2>
+		</div>
+		<article class="accordion  " id="accordion2">
+			<!--AJ Katzenmaier-->
+			<div class="card dark-blue  ">
+				<div class="card-header text-center  ">
+
+					<div class="row lime-green border ">
+
+						<div class="  bg-primary">
+
+							<img class=" logo-location" src="img/locationblue.png" alt="Location">
+						</div>
+						<div class="mx-auto  ">
+
+							<h3><a class=" text-white " aria-controls="infoU1" data-toggle="collapse" href="#mapAJKatzenmaier">AJ
+									Katzenmaier</a></h3>
+						</div>
+						<!-- <div class="col-3"></div>-->
+
+					</div>
+				</div>
+
+				<div id="mapAJKatzenmaier" class="collapse dark-blue" data-parent="#accordion2">
+					<div class="card-body text-center text-white">
+						<p>AJ Katzenmaier Elementary <br>24 W. Walton St., Chicago, IL 60610</p>
+						<iframe
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.657018148475!2d-87.63125808505526!3d41.9002327720087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34e07f69da7%3A0x15e198c063fc787c!2sAJ+Katzenmaier+Elementary!5e0!3m2!1ses-419!2sar!4v1556114243843!5m2!1ses-419!2sar"
+							style="width:100%; height:150px; border:none; background:transparent; overflow:hidden;"
+							allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+			<!--Greenbay-->
+			<div class="card dark-blue  ">
+				<div class="card-header text-center  ">
+
+					<div class="row lime-green border ">
+
+						<div class="  bg-primary">
+							<img class=" logo-location" src="img/locationblue.png" alt="Location">
+						</div>
+						<div class="mx-auto">
+							<h3><a class="text-left text-white " aria-controls="infoU1" data-toggle="collapse"
+									href="#mapGreenbay">Greenbay</a></h3>
+						</div>
+
+					</div>
+				</div>
+				<div id="mapGreenbay" class="collapse dark-blue" data-parent="#accordion2">
+					<div class="card-body text-center text-white">
+						<p>Greenbay Elementary<br>1734 N. Orleans St., Chicago, IL 60614</p>
+						<iframe
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.0242194234206!2d-87.6400254350548!3d41.91383807115686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd3407260c45b%3A0xb351205fae50c6f3!2sGreenbay+Elementary!5e0!3m2!1ses-419!2sar!4v1556120319678!5m2!1ses-419!2sar"
+							style="width:100%; height:150px; border:none; background:transparent; overflow:hidden;"
+							allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+			<!--Howard A Yeager-->
+			<div class="card dark-blue  ">
+				<div class="card-header text-center  ">
+
+					<div class="row lime-green border ">
+
+						<div class="  bg-primary">
+							<img class="  logo-location" src="img/locationblue.png" alt="Location">
+
+						</div>
+						<div class=" mx-auto ">
+							<h3><a class="text-white " aria-controls="infoU1" data-toggle="collapse" href="#mapHowardAYeager">Howard A
+									Yeager</a></h3>
+						</div>
+					</div>
+				</div>
+				<div id="mapHowardAYeager" class="collapse" data-parent="#accordion2">
+					<div class="card-body text-center text-white">
+						<p>Howard A Yeager Elementary.<br>1811 Morrow Ave, North Chicago, IL 60064 </p>
+						<iframe
+							src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11801.080246623287!2d-87.8538811!3d42.3154383!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8b51fa5d6efe771a!2sHoward+A.+Yeager+School+(PREK-K)!5e0!3m2!1ses-419!2sar!4v1564149577721!5m2!1ses-419!2sar"
+							style="width:100%; height:150px; border:none; background:transparent; overflow:hidden;"
+							allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+			<!--Marjorie P Hart-->
+			<div class="card dark-blue  ">
+				<div class="card-header text-center  ">
+
+					<div class="row lime-green border ">
+
+						<div class="  bg-primary">
+							<img class=" logo-location" src="img/locationblue.png" alt="Location">
+						</div>
+						<div class=" mx-auto">
+							<h3><a class="text-white " aria-controls="infoU1" data-toggle="collapse" href="#mapMarjoriePHart">Marjorie
+									P Hart</a></h3>
+						</div>
+
+					</div>
+					<div id="mapMarjoriePHart" class="collapse" data-parent="#accordion2">
+						<div class="card-body text-center text-white">
+							<p>Marjorie P Hart Elementary<br>2625 N. Orchard St., Chicago, IL 60614</p>
+							<iframe
+								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.2890673450765!2d-87.64816033505429!3d41.9296394701671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd30f2637f9d7%3A0xdbff5d5dfcfcfa35!2sMarjorie+P+Hart+Elementary!5e0!3m2!1ses-419!2sar!4v1556133324355!5m2!1ses-419!2sar"
+								style="width:100%; height:150px; border:none; background:transparent; overflow:hidden;"
+								allowfullscreen></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--North Elementary-->
+			<div class="card dark-blue  ">
+				<div class="card-header text-center  ">
+
+					<div class="row lime-green border ">
+
+						<div class="  bg-primary">
+							<img class=" logo-location" src="img/locationblue.png" alt="Location">
+						</div>
+						<div class=" mx-auto">
+							<h3><a class="text-white " aria-controls="infoU1" data-toggle="collapse" href="#mapNorth">North
+									Elementary</a></h3>
+
+						</div>
+					</div>
+					<div id="mapNorth" class="collapse" data-parent="#accordion2">
+						<div class="card-body text-center text-white">
+							<p>North Elementary<br>1409 N. Ogden Ave., Chicago, IL 60610</p>
+							<iframe
+								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1765.5760574806247!2d-87.64659584440717!3d41.90719634018161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd33af14860a5%3A0x5736e62f19086c62!2sNorth+Elementary!5e0!3m2!1ses-419!2sar!4v1556133541270!5m2!1ses-419!2sar"
+								style="width:100%; height:150px; border:none; background:transparent; overflow:hidden;"
+								allowfullscreen></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--South Elementary-->
+			<div class="card dark-blue  ">
+				<div class="card-header text-center  ">
+
+					<div class="row lime-green border ">
+
+						<div class="  bg-primary">
+							<img class="col-0 logo-location" src="img/locationblue.png" alt="Location">
+						</div>
+						<div class=" mx-auto">
+							<h3><a class="text-white " aria-controls="infoU1" data-toggle="collapse" href="#mapSouth">South
+									Elementary</a></h3>
+						</div>
+
+					</div>
+					<div id="mapSouth" class="collapse" data-parent="#accordion2">
+						<div class="card-body text-center text-white">
+							<p>South Elementary<br>2101 N. Fremont St., Chicago, IL 60614</p>
+							<iframe
+								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.7477648265644!2d-87.65355538505459!3d41.91978077078475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd3196fb41dc7%3A0x970be7f7d6336df5!2s2101+N+Fremont+St%2C+Chicago%2C+IL+60614%2C+EE.+UU.!5e0!3m2!1ses-419!2sar!4v1557302353821!5m2!1ses-419!2sar"
+								style="width:100%; height:150px; border:none; background:transparent; overflow:hidden;"
+								allowfullscreen></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</article>
+	</section>
+	<!--PAGINA COMPLETA ABOUT US-->
+	<!--Section s.a -->
+	<section id="about" class="d-none text-white dark-blue">
+		<article class="row">
+			<h2 class="col-12 text-center text-white sky-blue">About Us</h2>
+		</article>
+		<article class="container-fluid text-center">
+			<h2 class="lime-green-text">General Information</h2>
+			<p>The Northside Youth Soccer League was established in 1996 to provide
+				athletes residing in Chicago's northside neighborhoods an environment in which to learn
+				to play soccer.
+			</p>
+			<p>
+				To be a member of NYSL you must be between the ages of 4 - 12 and reside in Chicago northside
+				neighborhood.
+			</p>
+			<p>
+				NYSL is ran by a small full-time staff,
+				and relies on the generous volunteer time of parents and previous league members.
+			</p>
+		</article>
+		<!--Form-->
+		<form class="container-fluid" action="show-data.html" method="get">
+			<div class="form-group border rounded">
+				<input type="text" name="nickname" class="form-control" placeholder="Your Nickname">
+			</div>
+			<div class="form-group border rounded">
+				<input type="text" name="mail" class="form-control" placeholder="Your Email">
+			</div>
+			<div class="form-group border rounded">
+				<textarea name="message" class="form-control" rows="5" placeholder="Message"></textarea>
+			</div>
+			<button type="button" id="btnAboutSend" class="btn btn-primary btn-block ">Submit</button>
+		</form>
+	</section>
+	<!--PAGINA COMPLETA LOGIN-->
+	<!--Section s.l-->
+	<section id="login" class="d-none container-fluid text-center">
+		<img id="person" src="img/person.png" alt="No se encontro la imagen">
+		<form class="col">
+			<fieldset class="col">
+				<label class="text-center text-warning"> Login </label>
+				<div data-validate="Username is required" class="form-group">
+					<input type="text" id="logInEmail" name="email" placeholder="Type your Email" class="form-control">
+				</div>
+				<div data-validate="Password is required" class="form-group">
+					<input type="password" id="logInPassword" name="password" placeholder="Type your password"
+						class="form-control">
+				</div>
+				<button type="button" id="logInButton" class="btn btn-primary">Login</button>
+			</fieldset>
+			<fieldset class="col">
+				<div>
+					<br>
+					<a href="pwreset.html" class="text-warning">
+						Forgot password?
+					</a>
+				</div>
+				<label class="text-light">You do not have an User?</label>
+
+				<a href="#btnSign-up" id="btnSign-up" class="text-warning">Create User</a>
+
+			</fieldset>
+		</form>
+	</section>
+	<!--PAGINA COMPLETA SIGN-UP-->
+	<!--Section s.s -->
+	<section id="sign-up" class="d-none container-fluid text-center">
+		<img src="img/user-logo.png" class="rounded-circle mx-auto d-block" alt="usuario">
+		<div class="col-12 text-center text-white">
+			<h2><ins>CREATE <strong> USER</strong></ins></h2>
+		</div>
+		<div class="row justify-content-center">
+			<div class="col">
+				<form>
+					<div class="form-group text-center">
+						<input type="text" id="createUserFullName" class="form-control" name="fullName"
+							placeholder="Your full name">
+					</div>
+					<div class="form-group text-center">
+						<input type="text" id="createUserTeam" class="form-control" name="team" placeholder="Your team">
+					</div>
+					<div class="form-group text-center">
+						<input type="email" id="createUserEmail" class="form-control" name="email" placeholder="Your email">
+					</div>
+					<div class="form-group text-center">
+						<input type="password" id="createUserPassword" class="form-control" name="password"
+							placeholder="Your password">
+					</div>
+					<button type="button" id="createUserButton" class="btn btn-primary">Create User</button>
+				</form>
+			</div>
+		</div>
+	</section>
+	<!--PAGINA COMPLETA CHAT-->
+	<!--Section s.c -->
+	<section id="chat" class="d-none container-fluid">
+		<article class="row">
+			<h2 class="col-12 text-center border-bottom text-white sky-blue">Chat</h2>
+		</article>
+		<ul id="chatWindow" class="list-group"></ul>
+		<form>
+			<div class="form-group">
+				<input type="text" id="chatMessage" class="form-control" placeholder="Type your message">
+			</div>
+			<button id="chatSendMessageButton" class="btn btn-primary">Send Message</button>
+		</form>
+	</section>
+	<!--Scripts s.0 -->
+	<!--JavaScript-->
+	<!--JQuery-->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<!--Bootstrap-->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<!--Popper.js -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<!--Firebase Scripts-->
+	<script src="/__/firebase/6.3.3/firebase-app.js"></script>
+	<script src="/__/firebase/6.3.3/firebase-auth.js"></script>
+	<script src="/__/firebase/6.3.3/firebase-database.js"></script>
+	<script src="/__/firebase/init.js"></script>
+	<!--Scripts Propios-->
+	<script src="script/main.js"></script>
+	<script src="script/firebase.js"></script>
+</body>
+
+</html>

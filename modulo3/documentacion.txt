@@ -1,0 +1,210 @@
+﻿        ---------------------------------------------------DREAMTEAM-----------------------------------------------------
+                                                   *DOCUMENTACION COMPLETA*
+<---------------------------------------------------------------------------------------------------------------------->  
+
+                                                        MENU GUIA m.g
+                                                        
+                                             CTRL + F se abre cuadro y se busca  
+                                              - Menu Guia                 = m.g 
+                                              - Integrantes               = i.i 
+                                              - Comentarios Generales     = c.g
+                                              - Changelog index.html      = c.l.1
+                                              - Changelog script.js       = c.l.2
+                                              - Changelog style.css       = c.l.3                                              
+  
+<----------------------------------------------------------------------------------------------------------------------->
+
+                                                        INTEGRANTES
+                                                        
+                  * Cristian Queirolo (SCRUM MASTER): Games, FireBase, Show-Data, General Changes
+                  * Diana Ojeda: Playfields, CSS, General Design
+                  * Ulises Guzman: Login & FireBase 
+                  * Silvia: Sign-Up, General Changes
+                  * Christian Kevin Argento: Teams, JQuery, General Changes
+                  * Natalia Alvarez: Index & About Us 
+
+<------------------------------------------------------------------------------------------------------------------------>
+
+                                                        COMENTARIOS GENERALES c.g
+
+La idea de esta seccion es como lo sujiere el nombre comentarios sobre algun cambio general o para leer algo puntualmente
+de algun changelog.
+
+26/07/19 Comentario Nº1
+Christian Kevin Argento:
+  {La estructura para hacer un bloque de changelog o comentario es siempre la misma: 
+  - fecha
+  - numero de changelog o comentario  
+  - integrante
+  - pequeña reseña en caso de ser necesario
+  - cambios grandes (-)
+    · cambios pequeños dentro de un gran cambio (·)}.
+
+Esto va ahorrar leer todo el codigo cada vez que haya un cambio o arreglo por parte de alguno de los integrantes, y tambien
+como muestra de todo lo que se tuvo que trabajar para llegar a lo deseado. Despues miramos esta documentacion y va ser 
+increible todo lo que hicimos como grupo.
+Gracias por leerme!! :)
+
+<------------------------------------------------------------------------------------------------------------------------>
+
+                                                CHANGELOG index.html c.l.1
+
+Cristian Queirolo (SCRUM MASTER)
+--/--/-- { Modificaciones respecto de lo enviado por Diana/Christian (teams & CSS):
+  - Cambio de banner por el hecho con grid de Bootstrap;
+  - Cambio de formato tabla a grid de Bootstrap únicamente, para los próximos partidos de cada equipo;
+  - Uso de CSS para los colores y tamaño de las imágenes únicamente.}
+--/--/-- { Modificaciones respecto de lo enviado por Natalia (index & about us):
+  - Cambio de banner por el hecho con grid de Bootstrap;
+  - Leve modificación de la estructura, para usar menos márgenes fijos;
+  - Llamada a Bootstrap desde el link, sin utilizar archivos locales.}
+
+19/07/19  1er MAX Changelog:
+Christian Kevin Argento
+  {Se utilizaron las paginas index, about us y teams echos anteriormente, para crear un index con todas la paginas unidas.
+  - Se unio About us y Teams a este HTML con exito!.
+  - Agregado de <script> Script.js con funciones JQuery para ocultar y mostrar los distintos <section> del HTML.}
+
+21/07/19  2do MAX Changelog:
+Christian Kevin Argento
+ {- Modificacion de Header, se armo uno solo para que funcione con todas las <section>.
+  - Unidas las pagina Games, Playfields, Login, Sign-Up. 
+  - Hechas algunas correcciones pequeñas para optimizar codigo:
+    · Cambió el texto de boton Log-In / Login
+    · Se centro texto about us "col-sm-6 / col"
+    · Se centro texto login "col-sm-6 y sm-8 / col"
+    · Se centraron botones y logo de <header>
+    · Borro "onclick" de los botones
+    · Agregado etiquetas section y article
+    · Agregado de "id's"
+    · Agregado de <link> CSS para iconos facebook, twiter, etc. en pagina login
+    · Agregado de <link> FontAwesome copiados del sign-up
+    · Agregado de <script> Popper.js copiados del sign-up
+    · Agregado de <meta> "Extras" en <head>, copiados del login    
+    · Cambio de etiqueta <a> por <bottom> en Create Account y encerrado en <p>
+  - Añadido mapas de pruebas <iframe> en <section> games.
+  - Se agrego codigo al CSS para mapas.
+  - Añadido "Menu Guia" facilitar busqueda de las distintas secciones.
+  - Se modificaron los comentarios principales para que queden mas ordenados y legibles como una "documentacion".}
+
+24/07/19  3er Changelog:
+Ulises Guzman
+  {Cambios para mejorar la carga del HTML y Script.js al iniciarlo por primera vez y correccion de cambios esteticos.
+  - Agregado de <class="d-none>, para ocultar las <section>.
+  - Correccion de centrado y relleno de <h2> de las distintas <section>.}
+
+Christian Kevin Argento
+ {Modificaciones de "id´s", mapas y style.css  
+  - Se reemplazaron los mapas de pruebas por los correctos en <section> games
+  - Correjido el nombre del ultimo accordion de <section> playfields
+  - Cambios y agregados de "id´s" de los mapas de <section> playfields,games,teams.
+    . playfields: <id="map"> / <id="map+"nombre del estadio"">
+    . games: <id="g-map+"nombre del estadio"">
+    . teams: <id="t-map+"nombre del estadio"">}
+    
+    26/07/19 4to Changelog:
+Christian Kevin Argento
+ {Se termino todo lo propuesto con los mapas.
+  - Correjido el mapa del accordion Howard A Yeager de <section> playfields.
+  - Agregado de mapa <section> teams
+  - Agregado de "class="flecha"" en <section> teams <h2> > </h2>.
+  - Se quitaron las "id's" de los mapas de teams & games, en su lugar se pusieron "class",para mejor funcionamiento.
+  - Se agrego codigo al CSS para los mapas y flechas en teams.
+  - Se agrego codigo al Script para las <section> teams y games.
+  - Correcciones menores del <section> teams accordion U1 para que quede igual a los demas.
+  - Corregido los accordion en <section> teams ahora cuando uno se abre se cierra el otro.
+  - se cambio el nombre del .js Script / script.
+  - Se creo un archivo documentacion.txt para poner todo el changelog ahi, y aca quedan solo los ultimos cambios y el 
+    menu guia.}
+  
+28/07/19 5to Changelog:
+Ulises Guzman:
+  { - Centre el texto del about para responsive
+    - Modifique style.css
+    - Cree "id="person"".
+    - Mejore la estetica de los accordions de <section> teams.
+    - Cambie los errores de que daba h2 en teams cuando atrapaba los div
+    - Cambie los errores de que daba h2 en playfields cuando atrapaba los div
+    - Cambie la mayoria de los errores del html validator (restan mapas e ids)
+    - Cambie algunos divs con id quitando el container fluid para que quede mejor en pequeños telefonos}
+
+06/08/2019 6to Changelog:
+Cristian Queirolo:
+  { - Agrego un 'id' para el foro de mensajes, la idea es que sea una plantilla universal, y que se imprima la info. de la
+	  base de datos sobre esa plantilla, segun sea la fecha de juego desde donde se accedió. Para eso debería poder averiguar
+	  cuál es el id padre del botón en cuestión (¿para esto uso JQuery?)}
+
+
+<------------------------------------------------------------------------------------------------------------------------>
+
+                                                      CHANGELOG script.js c.l.2
+                                                      
+19/07/19  SE CREA ARCHIVO Script.js:
+Christian Kevin Argento
+  {Script que sirve para ocultar y mostrar las distintas paginas a las cual navegamos.
+  - Se logro ocultar teams y about us.  
+  - Creacion de funciones para los botones teams y about us (btnTeams & btnAbout).
+  - Creacion de funciones para boton back (btnBack1 & btnBack2), son distintos para cada pagina.}
+  
+21/07/19  1er Changelog:
+Christian Kevin Argento
+  {Se siguio trabajando en el script para ocultar las paginas restantes y optimizarlo.
+  - Se logro ocultar games,playfields,login,sign-up con exito.
+  - Creacion de funciones a los botones games, playfields, login, create account (btnGames & btnPlayfields & btnLogin & btnSign-up)
+  - Modificaciones en funcion(btnBack):
+    · Quedo una sola funcion para boton Back (btnBack), gracias a que hay un solo <header>.
+    · Inicializo una variable (shift), para optimizar el funcionamiento.  
+  - Añadido "Menu Guia" para ubicar facilmente las distintas funciones.
+  - Se modificaron los comentarios principales para que queden mas ordenados y legibles como una "documentacion".}
+
+24/07/19 2do Changelog:
+Ulises Guzman
+  {Se corrigieron problemas de carga al iniciar por primera vez la app gracias a la modificacion de las funciones.
+  - Cambio en todas las funciones hide/removeClass & show/addClass.
+  - Se elimino el bloque hidePages porque ahora las paginas se ocultan desde el HTML
+  - Modificacion en menu guia, borrado hidePages (h.p) agregado Testing (t.t).}
+
+26/07/19 3er Changelog
+Christian Kevin Argento:
+  {Se hizo un cambio con respecto a ocultar los mapas con @media del style.css y se uso una funcion (f.8) de Jquery,
+  ya que presento complicaciones al querer agregar la funcion (f.9) de hacer click y aparezca el mapa 
+    - Creaccion de funciones (f.8 & f.9)}
+
+06/08/19 4to Changelog
+Cristian Queirolo:
+  {Cambio algunos if por else if (mejor sintaxis) y agrego la lógica para volver del foro al index (para Testing)}
+
+<------------------------------------------------------------------------------------------------------------------------>
+
+                                                      CHANGELOG style.css c.l.3
+
+--/--/--  Creacion del archivo style.css:
+Diana Ojeda
+  {- Diseño general de NYSL WebApp.}
+
+--/--/--  1er Changelog:
+Cristian Queirolo (SCRUM MASTER)
+  {- Reduccion de codigo CSS y modificaciones varias.}
+
+21/07/19  2do Changelog:
+Christian Kevin Argento
+ {- Agregado de @media para ocultar mapas en la rotacion.
+  - Añadido "Menu Guia" para ubicar facilmente los estilos.
+  - Se añadieron comentarios principales para crear una "documentacion".}
+
+21/07/19  3er Changelog:
+Christian Kevin Argento
+ {- Modificacion y agregado de "id´s" en @media.} 
+
+26/07/19  4to Changelog:
+Christian Kevin Argento
+  {- Se borro @media mapa del codigo y del menu guia, ya que ahora los mapas se ocultan con script.js
+   - Agregado de @media flecha.}
+
+<------------------------------------------------------------------------------------------------------------------------>
+												
+												CHANGELOG firebase.js
+												
+--/--/-- Creación del archivo script/firebase.js
+												
+<------------------------------------------------------------------------------------------------------------------------>

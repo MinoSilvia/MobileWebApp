@@ -1,0 +1,98 @@
+/*
+Ultimo CHANGELOG c.l:
+
+28/07/19 5to Changelog:
+Ulises Guzman:
+  { - Cambios de tamaños puestos en %
+    - Agregado estilo #person.}
+*/
+
+/*    
+            MENU GUIA m.g
+  CTRL + F se abre cuadro y se busca
+  - Changelog               = c.l
+  - Menu guia               = m.g
+  - Colores de fondo        = c.f
+  - Colores de borde        = c.b
+  - Colores de texto        = c.t
+  - Tamaño imagenes         = t.i
+  - Rotacion dispositivo    = r.d    
+    .@media Flecha teams    = r.d.1
+*/
+
+/*Colores de fondo c.f*/
+.dark-blue {
+  background-color: #003263;
+}
+
+.lime-green {
+  background-color: #9dd10c;
+}
+
+.text-dark-blue {
+  color: #003263;
+}
+
+.sky-blue {
+  background-color: #00aff0;
+}
+
+.white {
+  background-color: #ffffff;
+}
+
+.logo-team-mini {
+  height: 15%;
+  width: 15%;
+  margin-right: 5%;
+}
+
+/*Color de bordes c.b */
+.b-lime-green {
+  border-color: #9dd10c;
+}
+
+/*Color de texto c.t */
+.lime-green-text {
+  color: #9dd10c;
+}
+
+/*Tamaño de las imágenes t.i */
+.logo-main {
+  height: 100px;
+  width: 100px;
+}
+
+.logo-team {
+  height: 3.52em;
+  width: 3.52em;
+}
+
+.logo-location {
+  height: 2.52em;
+  width: auto;
+}
+
+.logo-nysl {
+  width: 100px;
+  height: auto;
+}
+
+#person {
+  height: 4.52em;
+  width: 4.52em;
+}
+
+.globoChat {
+  height: 4.52em;
+  width: 4.52em;
+}
+
+/* @media flecha teams r.d.1*/
+/*Oculta las flechitas de teams cuando rotamos el dispositivo*/
+
+@media only screen and (max-width: 700px) and (orientation: landscape) {
+  .flecha {
+    display: none;
+  }
+}
